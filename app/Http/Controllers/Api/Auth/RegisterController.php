@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\Auth;
 
+use App\Events\ActivationEvent;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -25,6 +26,7 @@ class RegisterController extends Controller
             ]);
         }else{
             //send email
+            event(new ActivationEvent($user));
             return response([
                 'message' => 'Account Created, please check on your email to verify! :D'
             ]);

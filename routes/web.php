@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Auth\ActivationController;
+use App\Http\Controllers\AuthActivationController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\EventController as AdminEventController;
@@ -31,7 +31,7 @@ Route::resource('event', EventController::class);
 
 //Route::resource('user', UserController::class);
 
-Route::get('activate',[ActivationController::class,'activate'])->name('activate');
+Route::get('activate',[AuthActivationController::class,'activate'])->name('activate');
 
 //Route::resource('event', EventController::class);
 
